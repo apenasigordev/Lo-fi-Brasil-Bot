@@ -24,10 +24,14 @@ module.exports = {
     const finalArray = commandsArray.map((e) => e.data.toJSON());
     slash.register(client.user.id, finalArray);
     console.log(`${client.user.tag} Started`);
-    client.user.setStatus("online"); 
-    setInterval(() => {
+    client.user.setStatus("online");
     // console.log(`servidores: ${client.guilds.cache.size} • Usuarios: ${client.users.cache.size}`)
-    client.user.setActivity(`Lo-Fi Brasil | ${client.guilds.cache.size} servidores`, {type: "WATCHING"})
-    },16000);
+    try {
+    const results = await client.cluster.fetchClientValues('guilds.cache.size');
+    console.log(client.cluster.ids.keys())
+    client.user.setActivity(`Lo-Fi Brasil | ${results.reduce((acc, guildCount) => acc + guildCount, 0)} servidores [${client.cluster.id}/${client.cluster.count}]`, {type: "WATCHING"});
+    } catch(e) {
+      console.log(e)
+    }
   },
 };

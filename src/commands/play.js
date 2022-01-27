@@ -33,7 +33,7 @@ module.exports = {
 	
     interaction.reply({content: "🎧 | Tocando rádio Lo-Fi Brasil", components: []}).then(i => {
     setTimeout(() => {
-    interaction.followUp({content: "Agora a qualidade está melhor, com taixa de bits alta!\nCaso qualquer problema de conexão, ou algo assim, use /report [Problema na conexão]", ephemeral: true})
+    //interaction.followUp({content: "Agora a qualidade está melhor, com taixa de bits alta!\nCaso qualquer problema de conexão, ou algo assim, use /report [Problema na conexão]", ephemeral: true})
     }, 1000)
     });
   },

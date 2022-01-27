@@ -14,7 +14,7 @@ const slash = {
 
     try {
       const guildId = config.bot?.guildId;
-      console.log(commands)
+     // console.log(commands)
     
       if (!empty(guildId) ?? !isNaN(guildId)) {
         await rest

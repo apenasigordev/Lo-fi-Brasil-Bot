@@ -16,9 +16,9 @@ module.exports = {
     } else {
       await commandCheck.run(i);
       i.client.channels.cache.get("934424486009266176").send({content: `${i.user.tag} usou o comando ${i.commandName} em ${i.guild.name}`});
-     /* setTimeout(() => {
-        i.followUp({content: "Agora a qualidade está melhor, com taixa de bits alta!", ephemeral: true})
-      },1000)*/
+      setTimeout(() => {
+        // i.followUp({content: "Olá, parece que a plataforma caiu, o bot irá voltar a ter estabilidade em breve. Recomendamos que fique ciente que o problema é do Discord.", ephemeral: true})
+      },1000)
     }
   } catch(e) {
     console.log(e)

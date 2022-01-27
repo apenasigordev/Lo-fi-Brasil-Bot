@@ -6,6 +6,6 @@ module.exports = {
     .setName("ping")
     .setDescription("Latência do bot"),
   run: async (interaction) => {
-    interaction.reply({ content: `Pong! ${interaction.client.ws.ping} ms` });
+    interaction.reply({ content: `Pong! ${interaction.client.ws.ping} ms\nCluster: ${interaction.client.cluster.id} [${interaction.guild.shardId}]` });
   },
 };
